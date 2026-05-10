@@ -1,5 +1,11 @@
 # Pendulum-Wave-Simulator
 
+File Structure:
+• Pendulum.java: The Model class. It contains the physics logic, length, and angle data for a single pendulum.
+• PendulumWave.java: The Driver and View class. This is the file you run. It handles user input, manages the collection of pendulums, and renders the graphics.
+
+How it works:
+
 A Java simulation of a Multi-Pendulum System demonstrating Simple Harmonic Motion and Euler Integration where users can change how many non-interacting pendulums are present. This project uses math and code to show how pendulums move in the real world. 
 
 By giving each pendulum a different length (L), they create a "wave" effect as they swing in and out of sync, meaning each pendulum has a different period (T) which is the amount of time it takes to complete a full cycle.As length (L) increases, period (T) increases so each pendulum is swinging at a slightly different speed.
