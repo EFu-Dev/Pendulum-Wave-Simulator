@@ -1,8 +1,21 @@
 # Pendulum-Wave-Simulator
 
 File Structure:
-• Pendulum.java: The Model class. It contains the physics logic, length, and angle data for a single pendulum.
-• PendulumWave.java: The Driver and View class. This is the file you run. It handles user input, manages the collection of pendulums, and renders the graphics.
+
+• Pendulum.java: The Model class.
+• PendulumWave.java: The driver and view class. Run this file and enter the desired number of pendulums to generate the visualization.
+
+How to Run:
+
+1) Compile both files:
+
+         javac Pendulum.java PendulumWave.java
+
+3) Run the program:
+
+         java PendulumWave
+
+5) Enter the desired number of pendulums when prompted.
 
 How it works:
 
