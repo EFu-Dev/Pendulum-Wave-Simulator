@@ -8,9 +8,11 @@ As length (L) increases, period (T) increases so each pendulum is swinging at a 
 
 Using Euler Integration we calculate the Angular acceleration (α) at every millisecond.
 Equation for the motion:
+
 α =-(g/L)sin(θ)
 
 After having angular acceleration (α), we can update the velocity (ω) and position where △t is time step.
 Euler Integration:
 ω  new = ω old + (α  • △t)
+
 Θ new = θ old + (ω new  • △t)
