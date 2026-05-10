@@ -18,8 +18,7 @@ public class PendulumWave extends JPanel {
 
         for (int i = 0; i < numPendulums; i++) {
             double length = 150 + (i * 20); 
-            // Start everyone at a 90-degree angle (Math.PI / 2)
-            pendulums.add(new Pendulum(length, Math.PI / 2));
+            pendulums.add(new Pendulum(length, Math.PI / 2)); // Start everyone at a 90-degree angle (Math.PI / 2)
         }
 
         // Every 10 ms (100 FPS)
@@ -47,7 +46,7 @@ public class PendulumWave extends JPanel {
             g2d.drawLine(PIVOT_X, PIVOT_Y, x, y);
 
             // Draw the ball
-            g2d.setColor(new Color(255, 165, 31)); // Steel Blue
+            g2d.setColor(new Color(255, 165, 31));
             g2d.fillOval(x - 10, y - 10, 20, 20);
         }
     }
