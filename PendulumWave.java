@@ -17,7 +17,7 @@ public class PendulumWave extends JPanel {
         int numPendulums = input.nextInt();
 
         for (int i = 0; i < numPendulums; i++) {
-            double length = 150 + (i * 20); 
+            double length = 150 + (i * 12); 
             pendulums.add(new Pendulum(length, Math.PI / 2)); // Start everyone at a 90-degree angle (Math.PI / 2)
         }
 
@@ -31,13 +31,16 @@ public class PendulumWave extends JPanel {
         timer.start();
     }
 
-    @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        for (Pendulum p : pendulums) {
+        int colorIndex = 0;
+        int colorFlip = 1;
+        for (int i = pendulums.size()-1 ; i >= 0; i--) {
+            Pendulum p = pendulums.get(i); // this makes it so the longest pendulum renders first
+            
             int x = (int) (PIVOT_X + p.length * Math.sin(p.angle));
             int y = (int) (PIVOT_Y + p.length * Math.cos(p.angle));
 
@@ -45,8 +48,16 @@ public class PendulumWave extends JPanel {
             g2d.setColor(new Color	(80,47,0));
             g2d.drawLine(PIVOT_X, PIVOT_Y, x, y);
 
+            if (colorIndex >= 245){
+                colorFlip = -1;
+            }
+            else if (colorIndex <= 0){
+                colorFlip = 1;
+            }
+            colorIndex += colorFlip * 10;
+            
             // Draw the ball
-            g2d.setColor(new Color(255, 165, 31));
+            g2d.setColor(new Color(colorIndex, 165, 31));
             g2d.fillOval(x - 10, y - 10, 20, 20);
         }
     }
