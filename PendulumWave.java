@@ -22,7 +22,7 @@ public class PendulumWave extends JPanel {
             pendulums.add(new Pendulum(length, Math.PI / 2));
         }
 
-        // The "Game Loop" - Runs every 16ms (~60 FPS)
+        // Every 10 ms (100 FPS)
         Timer timer = new Timer(10, e -> {
             for (Pendulum p : pendulums) {
                 p.update(0.10); // Update physics
