@@ -19,7 +19,7 @@ public class Pendulum {
 
     public void update(double timeStep){
         angularAcceleration = (-gravity / length) * Math.sin(angle); // a = -(g/L) * sin(theta)
-        angularVelocity += angularAcceleration * timeStep // Euler Velocity
+        angularVelocity += angularAcceleration * timeStep; // Euler Velocity
         angularVelocity *= damping;
         angle += angularVelocity * timeStep; // Euler Position
     }
