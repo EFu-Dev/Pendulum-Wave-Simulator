@@ -3,6 +3,7 @@
 File Structure:
 
 • Pendulum.java: The Model class.
+
 • PendulumWave.java: The driver and view class. Run this file and enter the desired number of pendulums to generate the visualization.
 
 How to Run:
