@@ -1,11 +1,9 @@
-
-// A simple class to represent a pendulum
 public class Pendulum {
-    double length; // length of the pendulum
-    double mass; // mass of the pendulum bob
+    double length; 
+    double mass; 
     double angle; // angle of the pendulum from the vertical (in radians)
-    double angularVelocity; // angular velocity of the pendulum
-    double angularAcceleration; // angular acceleration of the pendulum
+    double angularVelocity; 
+    double angularAcceleration; 
 
     //constants for physics calculations
     private final double gravity = 9.8;
@@ -20,17 +18,10 @@ public class Pendulum {
     }
 
     public void update(double timeStep){
- // 1. Calculate Acceleration: a = -(g/L) * sin(theta)
-        angularAcceleration = (-gravity / length) * Math.sin(angle);
-        
-        // 2. Euler Integration: Velocity
-        angularVelocity += angularAcceleration * timeStep;
-        
-        // 3. Apply Damping (Slows down over time)
+        angularAcceleration = (-gravity / length) * Math.sin(angle); // a = -(g/L) * sin(theta)
+        angularVelocity += angularAcceleration * timeStep // Euler Velocity
         angularVelocity *= damping;
-        
-        // 4. Euler Integration: Position
-        angle += angularVelocity * timeStep;
+        angle += angularVelocity * timeStep; // Euler Position
     }
 }
 
